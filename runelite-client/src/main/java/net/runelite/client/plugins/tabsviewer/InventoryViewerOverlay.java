@@ -68,10 +68,12 @@ class InventoryViewerOverlay extends Overlay
 	@Override
 	public Dimension render(Graphics2D graphics)
 	{
-		if(config.tabsViewMode() == ViewerMode.INV)
+		if (config.tabsViewMode() != ViewerMode.INV && config.tabsViewMode() != ViewerMode.BOTH)
+		{
 			return null;
+		}
 
-		final ItemContainer itemContainer = client.getItemContainer(InventoryID.EQUIPMENT);
+		final ItemContainer itemContainer = client.getItemContainer(InventoryID.INVENTORY);
 
 		if (itemContainer == null)
 		{
@@ -109,6 +111,4 @@ class InventoryViewerOverlay extends Overlay
 	{
 		return itemManager.getImage(item.getId(), item.getQuantity(), item.getQuantity() > 1);
 	}
-
-
 }

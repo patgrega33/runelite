@@ -26,10 +26,12 @@ package net.runelite.client.plugins.tabsviewer;
 
 import com.google.inject.Provides;
 import net.runelite.client.config.ConfigManager;
+import net.runelite.client.game.SpriteManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
-import javax.inject.Inject;
 import net.runelite.client.ui.overlay.OverlayManager;
+
+import javax.inject.Inject;
 
 @PluginDescriptor(
 	name = "Tabs Viewer",
@@ -47,6 +49,9 @@ public class TabsViewerPlugin extends Plugin
 
 	@Inject
 	private OverlayManager overlayManager;
+
+	@Inject
+	private SpriteManager spriteManager;
 
 	@Inject
 	private TabsViewerConfig config;
